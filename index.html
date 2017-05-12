@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+    <script type="text/javascript" href="js.js"> var user = 0;
+		var comp = "";
+		var winner = 0;
+		var loser = 0;
+		var tie = 0;
+
+		function getRandomArbitrary() {
+		  var number = Math.floor(Math.random() * (3 - 0)) + 0;
+		  if (number==0) {
+		    return comp = "rock";
+		  }
+		  else if (number==1){
+		    return comp = "scissors";
+		  }
+		  else {
+		    return comp = "paper";
+		  }
+		}
+		function rockClick() {
+		  var test = getRandomArbitrary();
+		  if (test === "scissors") {
+		      winner++;
+		      var node = document.getElementById('score');
+			  node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		    }
+		  else if (test === "paper") {
+		      loser++;
+		      var node = document.getElementById('score');
+			  node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		    }
+		  else {
+		      tie++;
+		      var node = document.getElementById('score');
+			  node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		    }
+		}
+		function scissorsClick() {
+		    var test = getRandomArbitrary();
+		    if (test === "paper") {
+		        winner++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+				}
+		    else if (test === "rock") {
+		        loser++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");	
+				}
+		    else {
+		        tie++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+				}
+		    }       
+		function paperClick() {
+		    var test = getRandomArbitrary();
+		    if (test === "rock") {
+		        winner++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		    }
+		    else if (test === "scissors") {
+		        loser++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		        }
+		    else {
+		        tie++;
+		        var node = document.getElementById('score');
+				node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+		    }
+		}
+	</script>
+    <button onclick="rockClick()">Rock</button>
+    <button onclick="scissorsClick()">Scissors</button>
+    <button onclick="paperClick()">Paper</button>
+    <br>
+    <p id="score">hey</p>
+    <script type="text/javascript" href="htmlinject.js">
+    	var node = document.getElementById('score');
+		node.innerHTML = ("<p>wins: " + winner + "</p>" + "<p>losses: " + loser + "</p>" + "<p>ties: " + tie + "</p>");
+	</script>
+</body>
+</html>
